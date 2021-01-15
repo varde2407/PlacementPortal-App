@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "506433599844",
+    "project_id": "authentication-e487e",
+    "storage_bucket": "authentication-e487e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506433599844:android:815c4951161554c7b96271",
+        "android_client_info": {
+          "package_name": "com.avv.authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506433599844-eokf6ld3ulci8n7o9tl2thj80hf5sjd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHi0QPGB0m1bWtXkNupGilCRtHfXpku5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506433599844-eokf6ld3ulci8n7o9tl2thj80hf5sjd0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
