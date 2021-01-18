@@ -117,7 +117,7 @@ public class SignupPage extends AppCompatActivity implements View.OnClickListene
                     FirebaseUser user= mAuth.getCurrentUser();
 
                     //create entry in database
-                    UserHelperClass UHC= new UserHelperClass(email, password, v);
+                    UserHelperClass UHC= new UserHelperClass(email, password,"Dhooni","CSE", v, (float) 9.0, "Default Description","","",0);
                     mref.child(user.getUid()).setValue(UHC);
 
                     if (v)

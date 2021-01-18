@@ -35,6 +35,15 @@ public class CompanyCreateJob extends AppCompatActivity implements View.OnClickL
         EDTposition= (EditText) findViewById(R.id.editTextTextPersonName2);
         EDTdescription= (EditText) findViewById(R.id.editTextTextPersonName3);
         EDTNumber= (EditText) findViewById(R.id.editTextNumber2);
+
+
+        findViewById(R.id.button18).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent jj=new Intent(getApplicationContext(), CompanyProfileActivity.class);
+                startActivity(jj);
+            }
+        });
     }
 
     @Override

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.avv.authentication">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,8 +17,12 @@
         <activity android:name=".ApplyJob" />
         <activity android:name=".Student_viewjobs" />
         <activity android:name=".CompanyCreateJob" />
+        <activity android:name=".CommonSignup" />
+        <activity android:name=".StudentSignUp" />
+        <activity android:name=".CompanySignup" />
         <activity android:name=".CompanyProfileActivity" />
         <activity android:name=".YourProfileActivity" />
+        <activity android:name=".StudentProfile" />
         <activity android:name=".SignupPage" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -13,6 +14,7 @@ public class YourProfileActivity extends AppCompatActivity implements View.OnCli
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("aditya","reached oncreate of Yourprofile");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
@@ -31,10 +33,13 @@ public class YourProfileActivity extends AppCompatActivity implements View.OnCli
                 finish();
                 Intent intent = new Intent(YourProfileActivity.this, MainActivity.class);
                 startActivity(intent);
-
+                break;
             case R.id.button7:
-                Intent intent1 = new Intent(YourProfileActivity.this, Student_viewjobs.class);
+                Log.d("aditya","reached button onclick");
+                Intent intent1 = new Intent(YourProfileActivity.this, StudentProfile.class);
+                intent1.addFlags((Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 startActivity(intent1);
+                break;
         }
     }
 }

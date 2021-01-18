@@ -1,13 +1,19 @@
 package com.avv.authentication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,10 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseDatabase rootnode;
     private DatabaseReference mref;
     private DataSnapshot ds;
-    private Boolean vv;
+    private boolean vv ;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("adityaaaa ","reached oncreate mainactivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth= FirebaseAuth.getInstance();
@@ -66,15 +74,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             mref.addValueEventListener(postListener);
         }
+        TextView textView =(TextView)findViewById(R.id.textView16);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href='https://github.com/varde2407/Authentication'> Made by Atharva, Keshav and Aditya</a>";
+        textView.setText(Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT));
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         if(mAuth.getCurrentUser()!=null){
+        // TO FIX
+            ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    Log.d("aditya","reached ondata");
+                    UserHelperClass userdata = dataSnapshot.getValue(UserHelperClass.class);
+                    // ...
+                    vv = userdata.getStudent();
+                }
 
-             { startActivity(new Intent(this, YourProfileActivity.class)); }
-            //else { startActivity(new Intent(this,Company_viewjobs.class));}
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            };
+
+            mref.addValueEventListener(postListener);
+
+            if(vv){ startActivity(new Intent(this, YourProfileActivity.class)); }
+            else { startActivity(new Intent(this,CompanyProfileActivity.class));}
         }
     }
 
@@ -83,17 +114,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.textView3:
                 finish();
-                startActivity(new Intent(this, SignupPage.class));
+                startActivity(new Intent(this, CommonSignup.class));
+//                startActivity(new Intent(this, SignupPage.class));
                 break;
 
             case R.id.button:
                 LoginUser();
                 break;
+
         }
     }
 
     private void LoginUser(){
-
+        Log.d("aditya","reached loginuser");
         String email = EDTemail1.getText().toString().trim();
         String password = EDTpassword1.getText().toString().trim();
 
@@ -127,6 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
+
+                    Log.d("aditya","reached succesful login");
                     FirebaseUser user= mAuth.getCurrentUser();
 
                     mref=mref.child(user.getUid());
@@ -134,19 +169,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ValueEventListener postListener = new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+
+                            Log.d("aditya","reached ondatachange");
                             // Get Post object and use the values to update the UI
                             UserHelperClass userdata = dataSnapshot.getValue(UserHelperClass.class);
                             // ...
                             Boolean v =userdata.getStudent();
                             if (v)
                             {
+
+                                Log.d("aditya","reached a student");
                                 Intent intent= new Intent(getApplicationContext(), Student_viewjobs.class);
                                 startActivity(intent);
-                                finish();
                             }
                             else if (!v)
                             {
-                                Intent intent= new Intent(getApplicationContext(), CompanyCreateJob.class);
+                                Intent intent= new Intent(getApplicationContext(), CompanyProfileActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
