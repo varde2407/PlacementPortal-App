@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             {
 
                                 Log.d("aditya","reached a student");
-                                Intent intent= new Intent(getApplicationContext(), Student_viewjobs.class);
+                                Intent intent= new Intent(getApplicationContext(), StudentProfile.class);
                                 startActivity(intent);
                             }
                             else if (!v)

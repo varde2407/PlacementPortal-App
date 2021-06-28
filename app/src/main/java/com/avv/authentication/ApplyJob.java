@@ -26,10 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 public class ApplyJob extends AppCompatActivity implements View.OnClickListener {
 
     EditText nameEDT, applicationEDT;
-    TextView show1, show2;
+    TextView show1, show2,cpi1,location1;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase rootnode;
-    private DatabaseReference mref;
+    private FirebaseDatabase rootnode, tempnode;
+    private DatabaseReference mref,tempreference;
     private DataSnapshot ds;
     String jobID;
     
@@ -44,15 +44,25 @@ public class ApplyJob extends AppCompatActivity implements View.OnClickListener 
 
         show1 = (TextView) findViewById(R.id.textView10);
         show2 = (TextView) findViewById(R.id.textView11);
+     //   cpi1= findViewById(R.id.CompanyCpiCutoffTxt);
+        location1= findViewById(R.id.CompanyLocationTxt);
 
         findViewById(R.id.button8).setOnClickListener(this);
 
         Intent i=getIntent();
         String position= (String) i.getSerializableExtra("Position");
-        jobID= (String) i.getSerializableExtra("JobID");
+       // jobID= (String) i.getSerializableExtra("JobID");
         String companyID= (String) i.getSerializableExtra("CompanyID");
+        //Double cpi = (Double) i.getSerializableExtra("cpi_cutoff");
+        String location = (String) i.getSerializableExtra("job_Location");
         show1.setText(position);
         show2.setText(companyID);
+
+      // String s=Double.toString(cpi);
+       location1.setText(location);
+     //  cpi1.setText(s);
+
+
     }
 
     @Override

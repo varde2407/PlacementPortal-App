@@ -48,16 +48,16 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Email address" />
+            android:hint="Email address"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/newpassword"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:ems="10"
+            android:hint="password"
             android:inputType="textPassword"
-            android:text="password"
             tools:text="password" />
 
         <Button

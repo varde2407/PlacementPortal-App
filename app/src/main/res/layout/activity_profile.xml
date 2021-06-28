@@ -10,25 +10,25 @@
         android:id="@+id/button3"
         android:layout_width="171dp"
         android:layout_height="89dp"
-        android:layout_marginTop="204dp"
         android:text="Sign Out"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="171dp"
         android:layout_height="83dp"
-        android:layout_marginBottom="300dp"
         android:text="View Profile"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

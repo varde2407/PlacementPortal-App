@@ -1,8 +1,9 @@
 package com.avv.authentication;
 
 import android.content.Intent;
-
 public class JobHelperClass {
+
+
     String jobID;
     String companyID;
     String position;
@@ -10,13 +11,26 @@ public class JobHelperClass {
     int free_positions;
     Boolean status;
     String selected_name;
+    String Job_Location;
+    double Cpi_cutoff ;
+    boolean For_male;
+    boolean For_female;
 
-    public String getSelected_name() {
-        return selected_name;
+    public JobHelperClass(){
+
     }
-
-    public void setSelected_name(String selected_name) {
+    public JobHelperClass(String jobID, String companyID, String position, String description, int free_positions, Boolean status, String selected_name, String job_Location, double cpi_cutoff, boolean for_male, boolean for_female) {
+        this.jobID = jobID;
+        this.companyID = companyID;
+        this.position = position;
+        Description = description;
+        this.free_positions = free_positions;
+        this.status = status;
         this.selected_name = selected_name;
+        Job_Location = job_Location;
+        Cpi_cutoff = cpi_cutoff;
+        For_male = for_male;
+        For_female = for_female;
     }
 
     public String getJobID() {
@@ -25,19 +39,6 @@ public class JobHelperClass {
 
     public void setJobID(String jobID) {
         this.jobID = jobID;
-    }
-
-    public JobHelperClass() {
-    }
-
-    public JobHelperClass(String jobID, String companyID, String position, String description, int free_positions, Boolean status, String selected_name) {
-        this.companyID = companyID;
-        this.position = position;
-        Description = description;
-        this.free_positions = free_positions;
-        this.status = status;
-        this.jobID= jobID;
-        this.selected_name=selected_name;
     }
 
     public String getCompanyID() {
@@ -78,5 +79,45 @@ public class JobHelperClass {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getSelected_name() {
+        return selected_name;
+    }
+
+    public void setSelected_name(String selected_name) {
+        this.selected_name = selected_name;
+    }
+
+    public String getJob_Location() {
+        return Job_Location;
+    }
+
+    public void setJob_Location(String job_Location) {
+        Job_Location = job_Location;
+    }
+
+    public double getCpi_cutoff() {
+        return Cpi_cutoff;
+    }
+
+    public void setCpi_cutoff(double cpi_cutoff) {
+        Cpi_cutoff = cpi_cutoff;
+    }
+
+    public boolean isFor_male() {
+        return For_male;
+    }
+
+    public void setFor_male(boolean for_male) {
+        For_male = for_male;
+    }
+
+    public boolean isFor_female() {
+        return For_female;
+    }
+
+    public void setFor_female(boolean for_female) {
+        For_female = for_female;
     }
 }
