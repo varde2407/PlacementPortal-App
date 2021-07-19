@@ -11,9 +11,8 @@ Android Studio, Firebase database.
 |             For Students             |          For employers          |
 | :----------------------------------: | :-----------------------------: |
 |   View opportunities by companies    | Host any type of job/internship |
-| Filter by location, minimum CPI, etc | View all applicants in 1 place  |
-<!-- |                                      |                                 | -->
-
+| Filtered by location, minimum CPI, etc | View all applicants in 1 place  |
+| Apply to opportunities | View all openings created |
 
 ## Screenshots
 <table style="padding:10px">
