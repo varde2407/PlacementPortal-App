@@ -12,7 +12,22 @@ Android Studio, Firebase database.
 | :----------------------------------: | :-----------------------------: |
 |   View opportunities by companies    | Host any type of job/internship |
 | Filter by location, minimum CPI, etc | View all applicants in 1 place  |
-|                                      |                                 |
+<!-- |                                      |                                 | -->
+
+
+## Screenshots
+<table style="padding:10px">
+  <tr>
+    <td> <img src="./screenshots/welcome.jpeg"  alt="1" width = 279px height = 496px ></td>
+    <td><img src="./screenshots/company-login.jpeg" align="right" alt="2" width = 279px height = 496px></td>
+    <td><img src="./screenshots/stud-reg.jpeg" alt="3" width = 288px height = 512px></td>
+  </tr>
+   <tr>
+    <td> <img src="./screenshots/user.jpeg"  alt="1" width = 279px height = 496px ></td>
+    <td><img src="./screenshots/create_job.jpeg" align="right" alt="2" width = 279px height = 496px></td>
+    <td><img src="./screenshots/job-list.jpeg" alt="3" width = 288px height = 512px></td>
+  </tr>
+</table>
 
 
 
